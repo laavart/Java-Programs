@@ -41,9 +41,12 @@ public class aPLA20211210 {
     }
 
     // Question 3 Code
-    static void q3(String s, String k, int n){
+    static Vector<String> v = new Vector<>();
+    static void q3(String s, String k){
         int l = s.length();
-        if(n==l){
+        int n = k.length();
+        if(n==l && !(v.contains(k) || k.equals(s))){
+            v.add(k);
             System.out.println(k);
             return;
         }
@@ -51,8 +54,8 @@ public class aPLA20211210 {
             char c = s.charAt(i);
             if(k.indexOf(c) == -1){
                 String r = k+c;
-                q3(s, r, ++n);
-                i=0;
+                if(v.contains(r)) i=0;
+                else q3(s, r);
             }
         }
     }
@@ -93,7 +96,7 @@ public class aPLA20211210 {
         int[] b = {1,2,3,4,5,6,7,8};
         //q2(a, b, Integer.parseInt(bRead.readLine()));
 
-        q3("jump","",0);
+        q3("jump","");
 
         int[] c = {7,6,4,5,0,1};
         //q4(c);
