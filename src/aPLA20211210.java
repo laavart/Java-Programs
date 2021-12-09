@@ -41,15 +41,23 @@ public class aPLA20211210 {
     }
 
     // Question 3 Code
-    static void q3(String s){
-        char[] c = s.toCharArray();
-        int l = c.length;
+    static void q3(String s, String k, int n){
+        int l = s.length();
+        if(n==l){
+            System.out.println(k);
+            return;
+        }
         for(int i=0; i<l; i++){
-            //Code
+            char c = s.charAt(i);
+            if(k.indexOf(c) == -1){
+                String r = k+c;
+                q3(s, r, ++n);
+                i=0;
+            }
         }
     }
 
-        // Question 4 Code
+    // Question 4 Code
     static void q4(int[] a){
         Vector<Integer> v = new Vector<>();
         int max = Integer.MIN_VALUE;
@@ -85,7 +93,7 @@ public class aPLA20211210 {
         int[] b = {1,2,3,4,5,6,7,8};
         //q2(a, b, Integer.parseInt(bRead.readLine()));
 
-        q3("jump");
+        q3("jump","",0);
 
         int[] c = {7,6,4,5,0,1};
         //q4(c);
