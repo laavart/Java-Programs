@@ -4,10 +4,6 @@ public class s20211201 {
 
     static void primMCST(int[][] g){ //Error
         int l = g.length;
-        int[] n = new int[l];
-        int[][] p = new int[2][l-1];
-
-        Arrays.fill(n, Integer.MIN_VALUE);
 
         int u = l-1, v = l-1;
         for(int i=1; i<l; i++){
@@ -20,19 +16,21 @@ public class s20211201 {
         }
 
         int k=0;
+        int[] n = new int[l];
+        Arrays.fill(n, Integer.MAX_VALUE);
+        int[][] p = new int[2][(l-2)];
         p[0][k] = u;
-        p[1][k] = v;
+        p[1][k++] = v;
         n[u] = 0;
         n[v] = 0;
 
         for(int i=1; i<l; i++){
-            if(n[i] != 0){
+            if(n[i] != 0)
                 n[i] = (g[i][u] < g[i][v]) ? u : v ;
-            }
         }
 
-        while(k < l-1){
-            int min = Integer.MAX_VALUE, t=0;
+        while(k < l-2){
+            int min = n[0], t=0;
             for(int i=1; i<l; i++){
                 if(n[i] != 0){
                     if(g[i][n[i]]<min){
@@ -43,17 +41,17 @@ public class s20211201 {
             }
             p[0][k] = t;
             p[1][k] = n[t];
-            n[t] = 0;
             for(int i=1; i<l; i++){
                 if(n[i] != 0){
                     n[i] = (g[i][t] < g[i][n[t]]) ? t : n[t] ;
                 }
             }
+            n[t] = 0;
             k++;
         }
 
-        for(int[] x: p)
-            System.out.println("("+x[0]+","+x[1]+")");
+        for(int i=0; i<l-2; i++)
+            System.out.println("("+p[0][i]+","+p[1][i]+")");
     }
 
     public static void main(String[] Args) throws Exception{
