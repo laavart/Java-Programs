@@ -54,6 +54,53 @@ public class s20211201 {
             System.out.println("("+p[0][i]+","+p[1][i]+")");
     }
 
+    static void sUnion(int[] s, int u, int v){
+        if(s[u]<s[v]){
+            s[u] += s[v];
+            s[v] = u;
+        }
+        else{
+            s[v] += s[u];
+            s[u] = v;
+        }
+    }
+
+    static int sFind(int[] s, int x){
+        while(s[x]>0)
+            x = s[x];
+        return x;
+    }
+
+    static void kruskalMCST(int[][] e, int v){
+        int l = e[2].length;
+        int[] s = new int[v+1];
+        Arrays.fill(s,-1);
+        for(int i=0; i<l; i++)
+            for(int j=i; j<l; j++)
+                if(e[2][i]>e[2][j]){
+                    e[0][i] = e[0][i]^e[0][j];
+                    e[0][j] = e[0][i]^e[0][j];
+                    e[0][i] = e[0][i]^e[0][j];
+                    //**
+                    e[1][i] = e[1][i]^e[1][j];
+                    e[1][j] = e[1][i]^e[1][j];
+                    e[1][i] = e[1][i]^e[1][j];
+                    //**
+                    e[2][i] = e[2][i]^e[2][j];
+                    e[2][j] = e[2][i]^e[2][j];
+                    e[2][i] = e[2][i]^e[2][j];
+                }
+        for(int i=0; i<l; i++){
+            int x = sFind(s, e[0][i]);
+            int y = sFind(s, e[1][i]);
+
+            if( x != y){
+                sUnion(s,x,y);
+                System.out.println("("+e[0][i]+","+e[1][i]+")");
+            }
+        }
+    }
+
     public static void main(String[] Args) throws Exception{
 
         int I = Integer.MAX_VALUE;
@@ -67,7 +114,14 @@ public class s20211201 {
                 {I, 5, I, I, I, 20, I, I},
                 {I, I, 10, I, 14, 18, I, I},
         };
-
+        System.out.println("Prim:");
         primMCST(g);
+        System.out.println("Kruskal:");
+        int[][] e = {
+                {1,2,3,4,5,6,7},
+                {2,3,4,5,6,7,1},
+                {2,4,3,1,8,6,2}
+        };
+        kruskalMCST(e,7);
     }
 }
