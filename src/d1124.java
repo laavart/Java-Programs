@@ -25,9 +25,24 @@ public class d1124 {
         }
     }
 
+    static void manachersAlgo(String s){
+        int l = s.length();
+        String p = "";
+        for(int i = l-1; i>0; i--){
+            int c = Math.min(i, (l-i-1));
+            for(int j=1; j<=c; j++){
+                String t = s.substring(i-j, i+j+1);
+                if(s.charAt(i-j)!=s.charAt(i+j)) break;
+                else if(t.length()>p.length()) p = t;
+            }
+        }
+        if(!p.equals("")) System.out.println(p);
+    }
+
     public static void main(String[] Args) throws Exception{
         BufferedReader bRead = new BufferedReader(new InputStreamReader(System.in));
 
         manachersLongestPalindrome(bRead.readLine());
+        manachersAlgo(bRead.readLine());
     }
 }
