@@ -1,32 +1,27 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.HashSet;
 import java.util.Vector;
 
 public class d1112 {
     static void weightedSubstring(String s, String w, int n){
         int l = s.length();
         int c = 0, i=1;
-        Vector<String> d = new Vector<>();
+        HashSet<String> h =  new HashSet<>();
 
         for(int j=0; j+i<=l && i<=l; j++){
             int sm = 0;
-            boolean check = true;
             String ss = s.substring(j, j+i);
 
-            for(String x: d){
-                if(x.equals(ss)) {
-                    check = false;
-                    break;
-                }
-            }
+            boolean check = h.contains(ss);
 
-            if(check){
+            if(!check){
                 for(int k=0; k<i; k++)
                     sm += (ss.charAt(k)>=97 && ss.charAt(k)<=122) ? w.charAt(ss.charAt(k)-97)-48 : w.charAt(ss.charAt(k)-65)-48;
 
                 if(sm<=n){
                     c++;
-                    d.add(ss);
+                    h.add(ss);
                 }
             }
 
@@ -38,7 +33,7 @@ public class d1112 {
 
         System.out.println(c);
 
-        for(String x: d) System.out.println(x);
+        for(String x: h) System.out.println(x);
     }
 
     static void hyphenToFront(String s){
