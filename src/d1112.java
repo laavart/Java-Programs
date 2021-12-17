@@ -37,15 +37,15 @@ public class d1112 {
 
     static void hyphenToFront(String s){
         int l = s.length();
-        String n = "";
+        StringBuilder n = new StringBuilder();
 
         for(int i=0; i<l; i++){
             char c =s.charAt(i);
             if(c=='-'){
-                n = "-"+n;
+                n.insert(0, "-");
             }
             else{
-                n += c;
+                n.append(c);
             }
         }
 
@@ -57,6 +57,6 @@ public class d1112 {
 
         weightedSubstring(bRead.readLine(), bRead.readLine(), Integer.parseInt(bRead.readLine()));
 
-        //hyphenToFront(bRead.readLine());
+        hyphenToFront(bRead.readLine());
     }
 }
