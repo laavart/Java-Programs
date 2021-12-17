@@ -15,7 +15,7 @@ public class d1006 {
     }
 
     static String addBinaryStrings(String b1, String b2){
-        String b="";
+        StringBuilder b= new StringBuilder();
         String c = "0";
 
         int k;
@@ -24,29 +24,29 @@ public class d1006 {
             int j = b2.length()-1-k;
             if(c.equals("0")){
                 if(b1.charAt(i) == '0' && b2.charAt(j) == '0'){
-                    b = "0"+b;
+                    b.insert(0, "0");
                     c = "0";
                 }
                 else if(b1.charAt(i) == '1' && b2.charAt(j) == '1'){
-                    b = "0"+b;
+                    b.insert(0, "0");
                     c = "1";
                 }
                 else{
-                    b = "1"+b;
+                    b.insert(0, "1");
                     c = "0";
                 }
             }
             else{
                 if(b1.charAt(i) == '0' && b2.charAt(j) == '0'){
-                    b = "1"+b;
+                    b.insert(0, "1");
                     c = "0";
                 }
                 else if(b1.charAt(i) == '1' && b2.charAt(j) == '1'){
-                    b = "1"+b;
+                    b.insert(0, "1");
                     c = "1";
                 }
                 else{
-                    b = "0"+b;
+                    b.insert(0, "0");
                     c = "1";
                 }
             }
@@ -56,15 +56,15 @@ public class d1006 {
             if(b1.length()>b2.length()){
                 int i = b1.length()-1-k;
                 if(c.equals("0")){
-                    b = b1.charAt(i)+b;
+                    b.insert(0, b1.charAt(i));
                 }
                 else{
                     if(b1.charAt(i) == '0'){
-                        b = "1"+b;
+                        b.insert(0, "1");
                         c = "0";
                     }
                     else{
-                        b = "0"+b;
+                        b.insert(0, "0");
                         c = "1";
                     }
                 }
@@ -72,15 +72,15 @@ public class d1006 {
             else{
                 int j = b2.length()-1-k;
                 if(c.equals("0")){
-                    b = b2.charAt(j)+b;
+                    b.insert(0, b2.charAt(j));
                 }
                 else{
                     if(b2.charAt(j) == '0'){
-                        b = "1"+b;
+                        b.insert(0, "1");
                         c = "0";
                     }
                     else{
-                        b = "0"+b;
+                        b.insert(0, "0");
                         c = "1";
                     }
                 }
@@ -88,28 +88,29 @@ public class d1006 {
             k++;
         }
 
-        return b;
+        return b.toString();
     }
 
     static String find2sCompliment(String b){
-        String r="";
+        StringBuilder r= new StringBuilder();
 
         for(int i=0; i<b.length(); i++){
             if(b.charAt(i) == '1'){
-                r+="0";
+                r.append("0");
             }
             else{
-                r+="1";
+                r.append("1");
             }
         }
 
-        r = addBinaryStrings(r,"1");
+        r = new StringBuilder(addBinaryStrings(r.toString(), "1"));
 
-        return r;
+        return r.toString();
     }
 
     static int boothsAlgo(int B, int Q){
-        String a="0", h="0";
+        StringBuilder a= new StringBuilder("0");
+        String h="0";
 
         int c;
         if(B<0 && Q<0){
@@ -133,16 +134,16 @@ public class d1006 {
         }
 
         String b = "0"+Integer.toBinaryString(B);
-        String q = Integer.toBinaryString(Q);
+        StringBuilder q = new StringBuilder(Integer.toBinaryString(Q));
 
         int  sa = a.length(), sq = q.length();
 
         for(int j=0; j <= (b.length()-sq-1); j++){
-            q = "0"+q;
+            q.insert(0, "0");
         }
 
         for(int j=0; j <= (b.length()-sa-1); j++){
-            a = "0"+a;
+            a.insert(0, "0");
         }
 
         int i = b.length();
@@ -154,25 +155,25 @@ public class d1006 {
 
             if(t.equals("10")){
                 t = find2sCompliment(b);
-                a = addBinaryStrings(a,t);
+                a = new StringBuilder(addBinaryStrings(a.toString(), t));
             }
             else if(t.equals("01")){
-                a = addBinaryStrings(a,b);
+                a = new StringBuilder(addBinaryStrings(a.toString(), b));
             }
 
             h = ""+q.charAt(q.length()-1);
-            q = a.charAt(a.length()-1)+""+q.substring(0, q.length()-1);
-            a = h+a.substring(0, a.length()-1);
+            q = new StringBuilder(a.charAt(a.length() - 1) + "" + q.substring(0, q.length() - 1));
+            a = new StringBuilder(h + a.substring(0, a.length() - 1));
 
             i--;
         }
 
 
         if(c%2 == 1){
-            return -1*binaryStringToInteger(a+q);
+            return -1*binaryStringToInteger(a.toString() +q);
         }
         else{
-            return binaryStringToInteger(a+q);
+            return binaryStringToInteger(a.toString() +q);
         }
     }
 

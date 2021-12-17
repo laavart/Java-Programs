@@ -15,15 +15,15 @@ public class d1018 {
     }
 
     static int swapNibblesInAByte(int a){
-        String s = Integer.toBinaryString(a);
+        StringBuilder s = new StringBuilder(Integer.toBinaryString(a));
         int len = s.length();
         for(int i=0; i<8-len; i++){
-            s = "0"+s;
+            s.insert(0, "0");
         }
         System.out.println(s);
-        s = s.substring(4) + s.substring(0,4);
+        s = new StringBuilder(s.substring(4) + s.substring(0, 4));
         System.out.println(s);
-        return binaryStringToInteger(s);
+        return binaryStringToInteger(s.toString());
     }
 
     public static void main(String[] Args) throws Exception {

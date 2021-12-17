@@ -31,9 +31,7 @@ public class d1020 {
         }
 
         int[] b = new int[k];
-        for(int i=0; i<k; i++){
-            b[i] = a[i];
-        }
+        System.arraycopy(a, 0, b, 0, k);
 
         int i=0;
         while(i < l-k){
@@ -106,9 +104,9 @@ public class d1020 {
         //System.out.println(karatsubaAlgo(Integer.parseInt(bRead.readLine()), Integer.parseInt(bRead.readLine())));
 
         int[] a = {1,2,3,4,5,6,7,8};
-        shiftElements(a, Integer.parseInt(bRead.readLine()));
+        //shiftElements(a, Integer.parseInt(bRead.readLine()));
 
         int[] b = {2,3,-2,4};//{-2,0,-1};//{6,-3,-10,0,2};
-        //System.out.println(maximumProductSubarray(b));
+        System.out.println(maximumProductSubarray(b));
     }
 }

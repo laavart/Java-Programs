@@ -45,7 +45,7 @@ public class d1025 {
 
     public static void main(String[] Args) throws Exception{
         int[] a = {-2,5,3,1,2,6,-4,2};
-        //maxEquilibriumSum(a);
+        maxEquilibriumSum(a);
 
         int[] b = {16,17,4,3,5,2};//{7,6,4,5,0,1};
         leaderElements(b);

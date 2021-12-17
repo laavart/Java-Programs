@@ -21,19 +21,19 @@ public class d1004 {
     }
 
     static void binaryPalindrome(int n){
-        String b = "";
+        StringBuilder b = new StringBuilder();
 
         while(n>0){
             if(n%2==0){
-                b+="0";
+                b.append("0");
             }
             else{
-                b+="1";
+                b.append("1");
             }
             n/=2;
         }
 
-        palindrome(b);
+        palindrome(b.toString());
     }
 
     static void nBinaryPalindrome(int n){

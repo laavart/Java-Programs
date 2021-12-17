@@ -17,7 +17,7 @@ public class d0924 {
 
         while(c<10){
 
-            Boolean P[] = new Boolean[r+1];
+            Boolean[] P = new Boolean[r+1];
 
             Arrays.fill(P, true);
 

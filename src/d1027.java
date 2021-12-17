@@ -1,6 +1,3 @@
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-
 public class d1027 {
 
     static void majorityElement(int[] a){
@@ -28,8 +25,6 @@ public class d1027 {
     }
 
     public static void main(String[] Args) throws Exception{
-        BufferedReader bRead = new BufferedReader(new InputStreamReader(System.in));
-
         System.out.println();
         int[] a = {4,4,4,5,6,8,4,4};
         majorityElement(a);

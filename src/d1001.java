@@ -7,10 +7,7 @@ public class d1001 {
     static boolean matchAllOtherIndexes(int[] a, int[] r, int n, int i){
         boolean b;
         if(i == a.length-1)
-            if( (n-r[i]) % a[i] == 0 )
-                b = true;
-            else
-                b = false;
+            b = ((n - r[i])%a[i] == 0);
         else{
             if( (n-r[i]) % a[i] == 0 )
                 b = matchAllOtherIndexes(a,r,n,++i);
@@ -33,11 +30,11 @@ public class d1001 {
     }
 
     public static void main(String[] Args) throws Exception{
-        int a[] = {5,7};
-        int b[] = {1,3};
+        int[] a = {5,7};
+        int[] b = {1,3};
         chineseRemainderTheorem(a,b);
-        int c[] = {3,4,5};
-        int d[] = {2,3,1};
+        int[] c = {3,4,5};
+        int[] d = {2,3,1};
         chineseRemainderTheorem(c,d);
 
         bRead.close();
