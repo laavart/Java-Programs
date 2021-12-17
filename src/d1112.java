@@ -6,7 +6,7 @@ public class d1112 {
     static void weightedSubstring(String s, String w, int n){
         int l = s.length();
         int c = 0, i=1;
-        HashSet<String> h =  new HashSet<>();
+        HashSet<String> h = new HashSet<>();
 
         for(int j=0; j+i<=l && i<=l; j++){
             int sm = 0;
