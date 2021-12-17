@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.HashSet;
-import java.util.Vector;
 
 public class d1112 {
     static void weightedSubstring(String s, String w, int n){
