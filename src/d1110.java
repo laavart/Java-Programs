@@ -15,13 +15,14 @@ public class d1110 {
         }
 
         int c = 0;
-        String f = "", e = "";
+        StringBuilder f = new StringBuilder();
+        String e = "";
 
         for(int i=0; i<26; i++){
             while(a[i]>0){
                 if(a[i]-2>=0){
                     a[i]-=2;
-                    f = f + (char) (i+97);
+                    f.append((char) (i + 97));
                 }
                 else if(e.equals("")){
                     e = "" + (char) (i+97);
@@ -38,9 +39,9 @@ public class d1110 {
             System.out.println("Lexo Palindrome Not Applicable!!!");
         }
         else{
-            String r = "";
+            StringBuilder r = new StringBuilder();
             for(int i = f.length()-1; i>=0; i--){
-                r += f.charAt(i);
+                r.append(f.charAt(i));
             }
             System.out.println(f+e+r);
         }
@@ -90,12 +91,12 @@ public class d1110 {
     public static void main(String[] Args) throws Exception{
         BufferedReader bRead = new BufferedReader(new InputStreamReader(System.in));
 
-        //lexiPalindrome(bRead.readLine());
+        lexiPalindrome(bRead.readLine());
 
         String[] s = {"z11","a31","a2","l6","n9","y10","l11"};
         //naturalSortOrder(s);
 
-        int a[] = {10,6,5,1,9};//{10,3,4,5,23,6,9,13,62,32};
+        int[] a = {10,6,5,1,9};//{10,3,4,5,23,6,9,13,62,32};
         /*
         Sort.qSort(a,0, a.length);
         for(int x: a)
