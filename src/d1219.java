@@ -4,7 +4,7 @@ import java.util.Vector;
 
 public class d1219 {
 
-    static void Combinations(Vector<int[]> v, int a[], int n){
+    static void Combinations(Vector<int[]> v, int[] a, int n){
         //Code
     }
 
