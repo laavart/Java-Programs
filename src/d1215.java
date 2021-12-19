@@ -4,17 +4,13 @@ import java.util.Stack;
 
 public class d1215 {
 
-    Stack<Integer> x = new Stack<>();
-    Stack<Integer> y = new Stack<>();
-    static void maneuver(int m, int n){
-        if(m>0 && n>0){
-            //Code
-        }
+    static int maneuver(int m, int n){
+        if(m==1 || n==1) return 1;
+        return maneuver(m-1,n) + maneuver(m, n-1) ;
     }
 
     public static void main(String[] Args) throws Exception{
         BufferedReader bRead = new BufferedReader(new InputStreamReader(System.in));
-
-        maneuver(Integer.parseInt(bRead.readLine()), Integer.parseInt(bRead.readLine()));
+        System.out.println("Paths : "+maneuver(Integer.parseInt(bRead.readLine()), Integer.parseInt(bRead.readLine())));
     }
 }
