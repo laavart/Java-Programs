@@ -21,8 +21,11 @@ public class d1220 {
 
     public static void main(String[] Args) throws Exception{
         BufferedReader bRead = new BufferedReader(new InputStreamReader(System.in));
+        // For storing result
         StringBuilder r = new StringBuilder();
+        // Calling Function
         removeVowels(bRead.readLine(), r, 0);
+        // Printing Result
         System.out.println(r);
     }
 }
