@@ -60,17 +60,17 @@ public class d0927 {
 
         simpleSieve(n, v);
 
-        int r=n;
+        float r=n;
 
         for(int x: v){
 
             if(n % x == 0){
 
-                r -= (n/x);  // r = r*( 1 - (1/x) ) => r = r - (r/x) => r -= (r/x)
+                r -= (r/x);  // r = r*( 1 - (1/x) ) => r = r - (r/x) => r -= (r/x)
             }
         }
 
-        System.out.println(r);
+        System.out.println( ( (int) r ) );
     }
 
     static void eulerPhiGoingHalf(int n){
