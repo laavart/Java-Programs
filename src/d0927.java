@@ -60,17 +60,17 @@ public class d0927 {
 
         simpleSieve(n, v);
 
-        float r=n;
+        int r=n;
 
         for(int x: v){
 
             if(n % x == 0){
 
-                r -= (r/x);  // r = r*( 1 - (1/x) ) => r = r - (r/x) => r -= (r/x)
+                r -= (n/x);  // r = r*( 1 - (1/x) ) => r = r - (r/x) => r -= (r/x)
             }
         }
 
-        System.out.println( ( (int) r ) );
+        System.out.println(r);
     }
 
     static void eulerPhiGoingHalf(int n){
@@ -90,7 +90,7 @@ public class d0927 {
 
     public static void main(String[] Args) throws Exception{
 
-        eulerPhiGoingHalf(Integer.parseInt(bRead.readLine()));
+        eulerPhiUsingSimpleSieve(Integer.parseInt(bRead.readLine()));
 
         bRead.close();
     }
