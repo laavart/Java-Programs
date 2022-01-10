@@ -3,6 +3,7 @@ import java.io.InputStreamReader;
 
 public class pb20220109 {
 
+    // TC = O(n^3/2), SC = O(1)
     static void perfectNumber(int l, int u){
         while(l<=u){
             if(l!=1){
