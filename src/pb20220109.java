@@ -23,13 +23,23 @@ public class pb20220109 {
             if(i!=l-1) d = s.charAt(i+1);
             if(c == '(') h++;
             else if(c ==')') h--;
+            if(h<0) cPar(s.substring(i)+s.substring(i+1,l));
         }
+        if(h>0) oPar(s);
+    }
+
+    static void cPar(String s){
+
+    }
+
+    static void oPar(String s){
+
     }
 
     public static void main(String[] Args) throws Exception{
         BufferedReader bRead = new BufferedReader(new InputStreamReader(System.in));
 
-        perfectNumber(Integer.parseInt(bRead.readLine()), Integer.parseInt(bRead.readLine()));
+        //perfectNumber(Integer.parseInt(bRead.readLine()), Integer.parseInt(bRead.readLine()));
 
         expVal(bRead.readLine());
     }
