@@ -17,10 +17,7 @@ public class pb20220109 {
     static void expVal(String s){
         int l = s.length(), h=0;
         for(int i=0; i<l; i++){
-            char b=0, c=0, d=0;
-            if(i!=0) b = s.charAt(i-1);
-            c = s.charAt(i);
-            if(i!=l-1) d = s.charAt(i+1);
+            char c = s.charAt(i);
             if(c == '(') h++;
             else if(c ==')') h--;
             if(h<0) cPar(s.substring(i)+s.substring(i+1,l));
