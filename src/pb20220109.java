@@ -36,7 +36,7 @@ public class pb20220109 {
     public static void main(String[] Args) throws Exception{
         BufferedReader bRead = new BufferedReader(new InputStreamReader(System.in));
 
-        //perfectNumber(Integer.parseInt(bRead.readLine()), Integer.parseInt(bRead.readLine()));
+        //perfectNumber(Integer.parseInt(bRead.readLine().trim()), Integer.parseInt(bRead.readLine().trim()));
 
         expVal(bRead.readLine());
     }
