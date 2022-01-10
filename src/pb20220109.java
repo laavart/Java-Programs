@@ -15,7 +15,7 @@ public class pb20220109 {
     }
 
     static void expVal(String s){
-        int l = s.length(), h=0, e=0;
+        int l = s.length(), h=0;
         for(int i=0; i<l; i++){
             char b=0, c=0, d=0;
             if(i!=0) b = s.charAt(i-1);
