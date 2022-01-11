@@ -39,13 +39,13 @@ public class pb20220109 {
             char c = sb.charAt(n);
             if(c == s.peek()){
                 sb.deleteCharAt(n);
-                s.pop();
-                n--;
+                s.pop(); System.out.println(s);
             }
             n--;
         }
         e = sb.toString();
-        if(validExp(e).isEmpty() && (v.isEmpty() || !v.contains(e)) ){
+        System.out.println(e);
+        if(v.isEmpty() || !v.contains(e)){
             v.add(e);
             return e;
         }
@@ -56,11 +56,11 @@ public class pb20220109 {
         Stack<Character> s = validExp(e1);
         int l = e1.length();
         if(!s.isEmpty())
+            System.out.println("Answer:");
             for(int i=l-1; i>=0; i--){
                 String e2 = removeParan(e1, s, i);
-                if(!e2.equals("")) System.out.println(e2);
+                if(!e2.equals("") && validExp(e2).isEmpty()) System.out.println(" "+e2);
             }
-
     }
 
     public static void main(String[] Args) throws Exception{
@@ -68,7 +68,6 @@ public class pb20220109 {
 
         //perfectNumber(Integer.parseInt(bRead.readLine().trim()), Integer.parseInt(bRead.readLine().trim()));
 
-        expVal("(A)+(B))*(C)");
-        expVal(")X)Y(Z(");
+        while(true) expVal(bRead.readLine());
     }
 }
