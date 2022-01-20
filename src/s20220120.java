@@ -4,7 +4,6 @@ public class s20220120 {
     public static void main(String[] Args) throws IOException{
         BufferedReader bRead = new BufferedReader(new InputStreamReader(System.in));
         /**
-         * @author Laavart
          * To Create a new Folder
          */
         //if(new File("OutFiles").mkdir()) System.out.println("Folder Created...");
