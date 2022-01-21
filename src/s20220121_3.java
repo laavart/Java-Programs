@@ -1,8 +1,8 @@
 import java.io.*;
 
-public class s20220121_2 {
+public class s20220121_3 {
     /**
-     * Problem with this method is it does not take the object as a whole for input
+     * Serialization
      */
     public static void main(String[] Args){
         BufferedReader bRead = new BufferedReader(new InputStreamReader(System.in));
@@ -18,9 +18,6 @@ public class s20220121_2 {
             FileOutputStream fOS = new FileOutputStream("OutFiles\\s20220121_2.txt");
             DataOutputStream dOS = new DataOutputStream(fOS);
 
-            /**
-             * Order must be preserved
-             */
             dOS.writeInt(tO.oSr);
             dOS.writeUTF(tO.oName);
             dOS.writeBoolean(tO.oRel);
@@ -35,9 +32,6 @@ public class s20220121_2 {
             FileInputStream fIS = new FileInputStream("OutFiles\\s20220121_2.txt");
             DataInputStream dIS = new DataInputStream(fIS);
 
-            /**
-             * As show here we need to pick the values one by one and in the same order as written
-             */
             tO.oSr = dIS.readInt();
             tO.oName = dIS.readUTF();
             tO.oRel = dIS.readBoolean();
