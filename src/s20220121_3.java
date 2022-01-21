@@ -1,5 +1,25 @@
 import java.io.*;
 
+/**
+ * --------------MUST--------------
+ * Implements Serializable to work
+ */
+class TestObject implements Serializable {
+    public int oSr;
+    public String oName;
+    public boolean oRel;
+    public float oPer;
+    /**
+     * static values will not be stored
+     */
+    public static float oS;
+    /**
+     * transient values will also not be stored
+     * transient is a modifies used to store only values needed for short period of time
+     */
+    public transient int oT;
+}
+
 public class s20220121_3 {
     /**
      * Serialization
@@ -7,38 +27,35 @@ public class s20220121_3 {
     public static void main(String[] Args){
         BufferedReader bRead = new BufferedReader(new InputStreamReader(System.in));
 
-        //TestObj from s20220121_1.java
         try{
-            TestObj tO = new TestObj();
+            TestObject tOj = new TestObject();
 
-            tO.oSr = Integer.parseInt(bRead.readLine());
-            tO.oName = bRead.readLine();
-            tO.oRel = Boolean.parseBoolean(bRead.readLine());
+            tOj.oSr = Integer.parseInt(bRead.readLine());
+            tOj.oName = bRead.readLine();
+            tOj.oRel = Boolean.parseBoolean(bRead.readLine());
+            tOj.oPer = Float.parseFloat(bRead.readLine());
 
-            FileOutputStream fOS = new FileOutputStream("OutFiles\\s20220121_2.txt");
-            DataOutputStream dOS = new DataOutputStream(fOS);
+            FileOutputStream fOS = new FileOutputStream("OutFiles\\s20220121_3.txt");
+            ObjectOutputStream oOS = new ObjectOutputStream(fOS);
 
-            dOS.writeInt(tO.oSr);
-            dOS.writeUTF(tO.oName);
-            dOS.writeBoolean(tO.oRel);
+            oOS.writeObject(tOj);
         }
         catch (IOException e){
             e.printStackTrace();
         }
 
         try {
-            TestObj tO = new TestObj();
+            FileInputStream fIS = new FileInputStream("OutFiles\\s20220121_3.txt");
+            ObjectInputStream oIS = new ObjectInputStream(fIS);
 
-            FileInputStream fIS = new FileInputStream("OutFiles\\s20220121_2.txt");
-            DataInputStream dIS = new DataInputStream(fIS);
+            /**
+             * Throws ClassNotFoundException
+             */
+            TestObject tOj = (TestObject) oIS.readObject();
 
-            tO.oSr = dIS.readInt();
-            tO.oName = dIS.readUTF();
-            tO.oRel = dIS.readBoolean();
-
-            System.out.println(tO.oSr+"\t"+tO.oName+"\t"+tO.oRel);
+            System.out.println(tOj.oSr+"\t"+tOj.oName+"\t"+tOj.oRel+"\t"+tOj.oPer);
         }
-        catch (IOException e){
+        catch (ClassNotFoundException | IOException e) {
             e.printStackTrace();
         }
     }

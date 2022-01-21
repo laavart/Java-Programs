@@ -3,7 +3,7 @@ import java.io.*;
 class TestObj{
     public int oSr;
     public String oName;
-    public Boolean oRel;
+    public boolean oRel;
 }
 
 public class s20220121_1 {
