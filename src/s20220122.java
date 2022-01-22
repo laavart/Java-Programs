@@ -52,6 +52,10 @@ class MyArray3<T extends Number> extends MyArray<T>{
         super(n);
     }
 
+    /**
+     * SafeVarargs is used and function is set to final
+     * because we use variable arguments
+     */
     @SafeVarargs
     final void setList(T... x){
         int c=0;
@@ -82,6 +86,7 @@ interface MyInFac2{}
 /**
  * Generic classes can extend from one class and multiple interfaces
  * But the first one must be a class, IF extended from a class also
+ * BECAUSE generally we can extend from only one class, but we can implement many interfaces
  */
 class MyClass2<T extends MyClass & MyInFac & MyInFac2>{}
 
@@ -98,19 +103,37 @@ public class s20220122 {
     /**
      * We can apply limit to which classes we want to use
      * by using wildcard i.e., using "?" in <>,
+     * "?" allows all class, BUT can not access anyone
+     */
+    static void fn2( MyArray3<?> m){
+        //m.setList("","");
+        //m.setList(1,2);
+        //m.setList(true,false);
+        m.setList(null, null);
+    }
+
+    /**
      * "extends" for subclasses i.e., UPPER BOUND
      * like this function will take the classes like Integer, Float, etc.
      */
-    static void fn2( MyArray<? extends Number> m ){}
+    static void fn3( MyArray<? extends Number> m ){}
 
     /**
      * and "super" for parent-classes i.e., LOWER BOUND
      * like this function will take the classes like Number AND Object.
      */
-    static void fn3( MyArray<? super Integer> m ){}
+    static void fn4( MyArray<? super Integer> m ){}
 
 
     public static void main(String... Args){
+
+        /**
+         * Base type object should be same or "?"
+         */
+        //MyArray<Object> err = new MyArray<Integer>();
+        //MyArray<Object> err2 = new MyArray<String>();
+
+
         /**
          * This is being treated as
          * MyArray<Object> obj = new MyArray<>()
@@ -124,7 +147,7 @@ public class s20220122 {
          *      java: incompatible types: java.lang.String[] cannot be converted to java.lang.Number[]
          */
         //String[] s = {};
-        //MyArray2 err = new MyArray2(0,s);
+        //MyArray2 err3 = new MyArray2(0,s);
         /**
          * Here we can use any class that is extended from Number class
          * such as Integer, Float, Double, Long, etc.
@@ -137,7 +160,7 @@ public class s20220122 {
          * OUTPUT:
          *      java: type argument java.lang.String is not within bounds of type-variable T
          */
-        //MyArray3<String> err2 = new MyArray3<>(3);
+        //MyArray3<String> err4 = new MyArray3<>(3);
         /**
          * Here T will be "Integer"
          * It is accepted because itg extends from Number class
