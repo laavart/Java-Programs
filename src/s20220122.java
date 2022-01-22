@@ -81,6 +81,7 @@ class MyClass{}
 interface MyInFac2{}
 /**
  * Generic classes can extend from one class and multiple interfaces
+ * But the first one must be a class, IF extended from a class also
  */
 class MyClass2<T extends MyClass & MyInFac & MyInFac2>{}
 
