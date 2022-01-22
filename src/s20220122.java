@@ -77,7 +77,12 @@ class MyClass4<T extends MyInFac> extends MyArray<T>{
     }
 }
 
-
+class MyClass{}
+interface MyInFac2{}
+/**
+ * Generic classes can extend from one class and multiple interfaces
+ */
+class MyClass2<T extends MyClass & MyInFac & MyInFac2>{}
 
 public class s20220122 {
 
