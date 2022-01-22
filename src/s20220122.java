@@ -69,6 +69,7 @@ class MyIf2 implements MyInFac {}
  * Here,
  *    You can see that it is written "extends" in place of "implements"
  *    This happens ONLY if it is used for Generic classes
+ *    Because ONLY extends keyword is allowed in Generic class definition
  */
 class MyClass4<T extends MyInFac> extends MyArray<T>{
     MyClass4(int n, T[] a) {
