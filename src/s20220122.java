@@ -128,13 +128,6 @@ public class s20220122 {
     public static void main(String... Args){
 
         /**
-         * Base type object should be same or "?"
-         */
-        //MyArray<Object> err = new MyArray<Integer>();
-        //MyArray<Object> err2 = new MyArray<String>();
-
-
-        /**
          * This is being treated as
          * MyArray<Object> obj = new MyArray<>()
          * So the "T" is taken as Object
@@ -147,7 +140,7 @@ public class s20220122 {
          *      java: incompatible types: java.lang.String[] cannot be converted to java.lang.Number[]
          */
         //String[] s = {};
-        //MyArray2 err3 = new MyArray2(0,s);
+        //MyArray2 err = new MyArray2(0,s);
         /**
          * Here we can use any class that is extended from Number class
          * such as Integer, Float, Double, Long, etc.
@@ -160,12 +153,23 @@ public class s20220122 {
          * OUTPUT:
          *      java: type argument java.lang.String is not within bounds of type-variable T
          */
-        //MyArray3<String> err4 = new MyArray3<>(3);
+        //MyArray3<String> err2 = new MyArray3<>(3);
         /**
          * Here T will be "Integer"
          * It is accepted because itg extends from Number class
          */
         MyArray3<Integer> numT = new MyArray3<>(3);
+
+        /**
+         * Base type object should be same or "?"
+         */
+        //MyArray<Object> err = new MyArray<Integer>();
+        //MyArray<Object> err2 = new MyArray<String>();
+        /**
+         * It is not of any use, other than just to hold object
+         */
+        MyArray3<?> useless = new MyArray3<Integer>(2);
+        //useless.setList(1,2);
 
     }
 }
