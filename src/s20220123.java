@@ -24,5 +24,12 @@ public class s20220123 {
         System.out.println(a.getLast());
         System.out.println(a.indexOf(10));
         System.out.println(a);
+        /**
+         * Vector is a legacy class
+         * Legacy means it is from a long time
+         * Longer than its comparable class
+         * Like, ArrayList and linkedList
+         * So, it's better to NOT use legacy classes
+         */
     }
 }
