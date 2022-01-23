@@ -2,6 +2,12 @@ import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * You can use ArrayDeque instead of stack
+ * As stack is a legacy class
+ * It is better to use ArrayDeque
+ */
+
 public class s20220123_2 {
     public static void main(String... Args){
         ArrayDeque<Integer> a = new ArrayDeque<>(20);
@@ -29,12 +35,6 @@ public class s20220123_2 {
 
         a.pop();
 
-        a.retainAll(b);
 
-
-        /**
-         * You can use ArrayDeque instead of stack
-         * As stack is a legacy class
-         */
     }
 }
