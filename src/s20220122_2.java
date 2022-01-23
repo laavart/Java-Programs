@@ -88,6 +88,12 @@ public class s20220122_2 {
         System.out.println();
 
         /**
+         * removeAll(_), "_" => any Collection object
+         * This removes all the objects that are same in both objects
+         */
+        a.removeAll(b);
+
+        /**
          * forEach() performs an action (Lambda Expression) on all elements
          */
         a.forEach(x -> System.out.print(x+" "));

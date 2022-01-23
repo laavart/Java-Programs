@@ -19,6 +19,15 @@ public class s20220123 {
         a.add(5);
         a.add(10);
         a.addAll(1,b);
+        System.out.println(a);
+
+        /**
+         * retainAll(_), "_" => any Collection object
+         * This removes all the objects "other" than that are same in both objects
+         */
+        a.retainAll(b);
+
+        System.out.println(a);
         System.out.println(a.size());
         System.out.println(a.get(3));
         System.out.println(a.getLast());
