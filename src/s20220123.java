@@ -29,9 +29,9 @@ public class s20220123 {
 
         System.out.println(a);
         System.out.println(a.size());
-        System.out.println(a.get(3));
+        System.out.println(a.get(1));
         System.out.println(a.getLast());
-        System.out.println(a.indexOf(10));
+        System.out.println(a.indexOf(70));
         System.out.println(a);
         /**
          * Vector is a legacy class
