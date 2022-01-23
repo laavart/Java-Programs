@@ -3,6 +3,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * ArrayDeque is double ended queue
  * You can use ArrayDeque instead of stack
  * As stack is a legacy class
  * It is better to use ArrayDeque
@@ -56,5 +57,7 @@ public class s20220123_2 {
          * To use as a stack
          */
         a.pop();
+
+        System.out.println(a);
     }
 }
