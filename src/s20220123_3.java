@@ -55,7 +55,6 @@ public class s20220123_3 {
          * Using comparator MyComp
          */
         PriorityQueue<Integer> q = new PriorityQueue<>(new MyComp());
-
         q.add(11);
         q.add(9);
         q.add(33);
