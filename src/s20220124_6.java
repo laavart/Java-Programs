@@ -2,7 +2,8 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * LinkedHashMap preserves the order in which the entries are entered
+ * LinkedHashMap preserves the order in which the entries are entered or accessed
+ * LinkedHashMap can also be used as Cache
  */
 public class s20220124_6 {
     public static void main(String... Args){
@@ -39,7 +40,10 @@ public class s20220124_6 {
         l.put(4,"Four");
         System.out.println(l);
         /**
-         * LinkedHashMap can also be used as Cache
+         * LinkedHashSet is similar to LinkedHashMap
+         * Just the difference is,
+         * LinkedHashSet is a set, hence it contains an element
+         * LinkedHashMap is a map, hence it contains a key-value pair
          */
     }
 }
