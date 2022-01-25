@@ -1,3 +1,4 @@
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -27,5 +28,19 @@ public class s20220125_2 {
          * Stores all the entries to XML file
          */
         p.storeToXML(new FileOutputStream("OutFiles\\s20220125_2.xml"), "My Laptop");
+
+        /**
+         * Loads the entries from a file
+         */
+        Properties f = new Properties();
+        f.load(new FileInputStream("OutFiles\\s20220125_2.txt"));
+        System.out.println("From File: "+f);
+
+        /**
+         * Loads the entries from XML file
+         */
+        Properties x = new Properties();
+        x.loadFromXML(new FileInputStream("OutFiles\\s20220125_2.xml"));
+        System.out.println("From XML: "+x);
     }
 }
