@@ -34,5 +34,24 @@ public class s20220125_4 {
          */
         b1.set(7,22,false);
         System.out.println(b1);
+        /**
+         * flip(I) => Flips converts a bit at "I" from true to false or vice-versa
+         */
+        b1.flip(8);
+        System.out.println(b1);
+        /**
+         * flip(I,J) => Flips converts a bit from "I"to "J", from true to false or vice-versa
+         */
+        b1.flip(1,13);
+        System.out.println(b1);
+        /**
+         * It performs all bitwise operations like,
+         * BitSet "B"
+         * and(B) => Intersection
+         * andNot(B)
+         * or(B) => Union
+         * xor(B)
+         * intersects(B)
+         */
     }
 }
