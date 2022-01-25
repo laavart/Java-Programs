@@ -21,6 +21,5 @@ public class s20220125_5 {
         System.out.println("Using Created Comparator:- ");
         for(var x: a) System.out.println(x);
 
-
     }
 }
