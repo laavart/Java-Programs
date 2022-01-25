@@ -27,7 +27,13 @@ public class s20220124_5 {
         /**
          * it computes lambda expression for any particular entry
          */
-        hm.compute(2, (k,v) -> v + "Do");
+        hm.compute(2, (k,v) -> v+"Do");
+        System.out.println(hm);
+
+        /**
+         *
+         */
+        hm.computeIfAbsent(4, (K) -> K+"Char");
         System.out.println(hm);
     }
 }
