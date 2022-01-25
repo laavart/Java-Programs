@@ -25,13 +25,14 @@ public class s20220124_5 {
         System.out.println(hm);
 
         /**
-         * it computes lambda expression for any particular entry
+         * compute() computes lambda expression for any particular entry
          */
         hm.compute(2, (k,v) -> v+"Do");
         System.out.println(hm);
 
         /**
-         *
+         * compute() computes lambda expression for any particular entry
+         * Iff it is not present already
          */
         hm.computeIfAbsent(4, (K) -> K+"Char");
         System.out.println(hm);
