@@ -1,6 +1,7 @@
 #My Laptop
-#Tue Jan 25 09:24:47 IST 2022
+#Tue Jan 25 09:32:13 IST 2022
 Brand=Dell
+Model=G3
 CPU=Intel i5 8th Gen
 GPU=Nvidia GTX 1050
 RAM=16 GB

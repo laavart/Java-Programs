@@ -13,11 +13,13 @@ public class s20220125_2 {
         Properties p = new Properties();
 
         p.setProperty("Brand", "Dell");
+        p.setProperty("Model", "G3");
         p.setProperty("CPU", "Intel i5 8th Gen");
         p.setProperty("GPU", "Nvidia GTX 1050");
         p.setProperty("RAM", "16 GB");
         p.setProperty("Colour", "Black");
-        System.out.println(p);
+        System.out.println("Brand: "+p.getProperty("Brand")+" "+p.getProperty("Model"));
+        System.out.println("Properties: "+p);
 
         /**
          * Stores all the entries to a file
