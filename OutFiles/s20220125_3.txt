@@ -1,0 +1,4 @@
+Name=Jaadu
+Age=20
+City=LKO
+State=UP
