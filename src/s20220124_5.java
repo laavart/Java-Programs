@@ -16,10 +16,18 @@ public class s20220124_5 {
 
         hm.put(1,"One");
         hm.put(2,"Two");
+        System.out.println(hm);
+
         /**
          * Here the value of key "1" just got updated
          */
         hm.put(1,"Ek");
+        System.out.println(hm);
+
+        /**
+         * it computes lambda expression for any particular entry
+         */
+        hm.compute(2, (k,v) -> v + "Do");
         System.out.println(hm);
     }
 }
