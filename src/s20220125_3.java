@@ -33,6 +33,5 @@ public class s20220125_3 {
         s = new String(fIS.readAllBytes());
         t = new StringTokenizer(s,"=\n");
         while (t.hasMoreTokens()) System.out.println(t.nextToken());
-
     }
 }
