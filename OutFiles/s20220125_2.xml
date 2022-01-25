@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>My Laptop</comment>
+<entry key="Brand">Dell</entry>
+<entry key="CPU">Intel i5 8th Gen</entry>
+<entry key="GPU">Nvidia GTX 1050</entry>
+<entry key="RAM">16 GB</entry>
+<entry key="Colour">Black</entry>
+</properties>
