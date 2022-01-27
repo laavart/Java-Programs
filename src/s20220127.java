@@ -1,3 +1,4 @@
+import java.time.Clock;
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.ZoneId;
@@ -105,6 +106,14 @@ public class s20220127 {
          *                      ----
          */
         System.out.println(d.atTime(0,20,0,1719));
+
+        /**
+         * LocalDate + LocalTime = LocalDateTime
+         * LocalDateTime + ZoneOffset = OffsetDateTime
+         * OffsetDateTime + ZoneID = ZonedDateTime
+         *
+         * LocalTime + ZoneOffset = OffsetTime
+         */
 
 
         /**
