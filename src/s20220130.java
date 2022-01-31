@@ -7,7 +7,7 @@ import java.sql.*;
 public class s20220130 {
     public static void main(String[] Args) {
         try {
-            Class.forName("org.sqlte.JDBC");
+            Class.forName("org.sqlite.JDBC");
             Connection con = DriverManager.getConnection("jdbc:sqlite:C:/Users/laava/DataGripProjects/SQLite/TJDBC.sqlite");
             /**
              * Statement
