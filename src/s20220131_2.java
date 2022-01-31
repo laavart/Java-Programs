@@ -1,5 +1,8 @@
 import java.awt.*;
 
+/**
+ * Frame
+ */
 public class s20220131_2 {
     public static void main(String[] Args){
         MyFrame mf = new MyFrame();
