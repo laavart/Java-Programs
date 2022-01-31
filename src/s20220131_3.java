@@ -3,6 +3,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
+/**
+ * Button
+ */
+
 public class s20220131_3 {
     public static void main(String[] Args){
         MyFrame2 f = new MyFrame2();
