@@ -8,7 +8,7 @@ public class s20220130 {
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery("SELECT * FROM Student;");
             while(rs.next()){
-                System.out.println(rs.getString(2));
+                System.out.println(rs.getString("name"));
                 System.out.println(rs.getString(3));
                 System.out.println();
             }
