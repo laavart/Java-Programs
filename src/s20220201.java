@@ -1,4 +1,6 @@
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.TextEvent;
 import java.awt.event.TextListener;
 
@@ -9,7 +11,7 @@ public class s20220201 {
     }
 }
 
-class MyFrame4 extends Frame implements TextListener{
+class MyFrame4 extends Frame implements TextListener, ActionListener {
 
     TextField tf;
     Label l1, l2;
@@ -22,6 +24,7 @@ class MyFrame4 extends Frame implements TextListener{
 
         tf = new TextField("Enter Something...", 7);
         tf.addTextListener(this);
+        tf.addActionListener(this);
 
         l1 = new Label("Waiting...");
         l2 = new Label("Waiting to Press Enter...");
@@ -35,6 +38,11 @@ class MyFrame4 extends Frame implements TextListener{
     public void textValueChanged(TextEvent e) {
         String s = tf.getText();
         l1.setText( s.equals("") ? "_Blank_" : s );
+    }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        String s = tf.getText();
+        l2.setText( s.equals("") ? "_Blank_" : s );
     }
 }
