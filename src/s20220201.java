@@ -11,7 +11,7 @@ public class s20220201 {
     }
 }
 
-class MyFrame4 extends Frame implements TextListener, ActionListener {
+class MyFrame4 extends Frame {
 
     TextField tf;
     Label l1, l2;
@@ -22,9 +22,12 @@ class MyFrame4 extends Frame implements TextListener, ActionListener {
         setLayout(new FlowLayout());
         setSize(800,450);
 
-        tf = new TextField("Enter Something...", 7);
-        tf.addTextListener(this);
-        tf.addActionListener(this);
+        tf = new TextField("", 7);
+        tf.setEchoChar('*');
+
+        Handler h = new Handler();
+        tf.addTextListener(h);
+        tf.addActionListener(h);
 
         l1 = new Label("Waiting...");
         l2 = new Label("Waiting to Press Enter...");
@@ -34,15 +37,17 @@ class MyFrame4 extends Frame implements TextListener, ActionListener {
         add(l2);
     }
 
-    @Override
-    public void textValueChanged(TextEvent e) {
-        String s = tf.getText();
-        l1.setText( s.equals("") ? "_Blank_" : s );
-    }
+    class Handler implements TextListener, ActionListener {
+        @Override
+        public void textValueChanged(TextEvent e) {
+            String s = tf.getText();
+            l1.setText( s.equals("") ? "_Blank_" : s );
+        }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        String s = tf.getText();
-        l2.setText( s.equals("") ? "_Blank_" : s );
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String s = tf.getText();
+            l2.setText( s.equals("") ? "_Blank_" : s );
+        }
     }
 }
