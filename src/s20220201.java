@@ -4,6 +4,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.TextEvent;
 import java.awt.event.TextListener;
 
+/**
+ * TextField
+ * TextListener
+ */
 public class s20220201 {
     public static void main(String[] Args){
         MyFrame4 f = new MyFrame4();

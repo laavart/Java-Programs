@@ -4,6 +4,7 @@ import java.awt.event.ItemListener;
 
 /**
  * CheckBox
+ * ItemListener
  */
 public class s20220131_4 {
     public static void main(String[] Args){
