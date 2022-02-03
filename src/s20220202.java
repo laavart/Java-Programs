@@ -2,6 +2,10 @@ import java.awt.*;
 import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
 
+/**
+ * ScrollBar
+ * Adjustment Listener
+ */
 public class s20220202 {
     public static void main(String[] Args){
         MyFrame7 f = new MyFrame7();
