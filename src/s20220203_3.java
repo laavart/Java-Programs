@@ -6,7 +6,7 @@ import java.awt.event.WindowStateListener;
 
 public class s20220203_3 {
     public static void main(String[] Args){
-        MyFrame10 f = new MyFrame10();
+        MyFrame11 f = new MyFrame11();
         f.setVisible(true);
     }
 }
