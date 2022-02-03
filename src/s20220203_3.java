@@ -30,37 +30,39 @@ class MyFrame10 extends Frame{
 
         @Override
         public void windowOpened(WindowEvent e) {
-
+            System.out.println("Opened");
         }
 
         @Override
         public void windowClosing(WindowEvent e) {
-
+            System.out.println("Closing");
+            System.exit(0);
         }
 
         @Override
         public void windowClosed(WindowEvent e) {
-
+            // on calling dispose() on the window
+            System.out.println("Closed");
         }
 
         @Override
         public void windowIconified(WindowEvent e) {
-
+            System.out.println("Iconified");
         }
 
         @Override
         public void windowDeiconified(WindowEvent e) {
-
+            System.out.println("DeIconified");
         }
 
         @Override
         public void windowActivated(WindowEvent e) {
-
+            System.out.println("Activated");
         }
 
         @Override
         public void windowDeactivated(WindowEvent e) {
-
+            System.out.println("DeActivated");
         }
     }
 
@@ -68,7 +70,10 @@ class MyFrame10 extends Frame{
 
         @Override
         public void windowStateChanged(WindowEvent e) {
-
+            System.out.println(e.getOldState());
+            System.out.println(e.getNewState());
+            System.out.println(e.getWindow());
+            System.out.println(e.getOppositeWindow());
         }
     }
 
@@ -76,12 +81,12 @@ class MyFrame10 extends Frame{
 
         @Override
         public void windowGainedFocus(WindowEvent e) {
-
+            System.out.println("GAINED");
         }
 
         @Override
         public void windowLostFocus(WindowEvent e) {
-
+            System.out.println("LOST");
         }
     }
 }
