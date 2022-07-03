@@ -33,15 +33,17 @@ public class TCS_CodeVita_A {
             else{
                 u1.add(c);
                 if(u2.containsKey(c)){
-                    if(Character.isDigit(c)) num.append( String.valueOf(c).repeat(u2.get(c)) );
-                    else res.append( String.valueOf(c).repeat(u2.get(c)) );
+                    int l = u2.get(c);
+                    if(Character.isDigit(c)) for(int j=0; j<l; j++) num.append(c);
+                    else for(int j=0; j<l; j++) res.append(c);
                 }
             }
         }
 
         res.append(num);
 
-        for(int i=0; i<l2; i++)
+        int l = res.length();
+        for(int i=0; i<Math.min(l,l2); i++)
             if(s2.charAt(i) == ' ')
                 res.insert(i-1,' ');
 
